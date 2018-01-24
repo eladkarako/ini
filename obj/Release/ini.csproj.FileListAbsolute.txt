@@ -1,0 +1,5 @@
+D:\Dropbox\המסמכים שלי\SharpDevelop Projects\ini\ini\bin\Release\sample.ini
+D:\Dropbox\המסמכים שלי\SharpDevelop Projects\ini\ini\bin\Release\ini.exe.config
+D:\Dropbox\המסמכים שלי\SharpDevelop Projects\ini\ini\bin\Release\ini.exe
+D:\Dropbox\המסמכים שלי\SharpDevelop Projects\ini\ini\obj\Release\ResolveAssemblyReference.cache
+D:\Dropbox\המסמכים שלי\SharpDevelop Projects\ini\ini\obj\Release\ini.exe

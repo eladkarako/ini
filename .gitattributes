@@ -1,6 +1,19 @@
 #explicit binary content (reduced diff).
-*.exe        binary
-*.pdb        binary
-*.txt        text    eol=crlf
-*.cs         text    eol=crlf
-*.csproject  text    eol=crlf
+
+*.exe          binary
+*.ico          binary
+*.pdb          binary
+*.snk          binary
+
+README.md              eol=crlf
+LICENSE        text    eol=crlf
+
+*.ini          text    eol=crlf
+*.txt          text    eol=crlf
+*.cs           text    eol=crlf
+*.manifest     text    eol=crlf
+*.sdsettings   text    eol=crlf
+*.Settings     text    eol=crlf
+*.csproject    text    eol=crlf
+*.csproj       text    eol=crlf
+*.config       text    eol=crlf
