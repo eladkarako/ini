@@ -8,6 +8,7 @@
 README.md              eol=crlf
 LICENSE        text    eol=crlf
 
+*.sln          text    eol=crlf
 *.ini          text    eol=crlf
 *.txt          text    eol=crlf
 *.cs           text    eol=crlf

@@ -1,2 +1,13 @@
-# sharp-ini
-INI read/write for C#. Unicode. Minimal. Using Native Windows API: "GetPrivateProfileStringW" and "WritePrivateProfileStringW" (+more..) From The Library-File "kernel32.dll" (- YES!!! WITH UNICODE SUPPORT!)
+<pre>
+<h1>INI</h1>
+
+<h2>[C#] INI Read/Write,<br/>With Unicode Support.<h2>
+
+<h3>Small, <br/>Simple, <br/>Fast.</h3>
+
+<h2>No Dependencies.</h2>
+
+<hr/>
+
+<h4>Using Native Windows API from kernel32.dll: GetPrivateProfileStringW, WritePrivateProfileStringW</h4>
+</pre>
