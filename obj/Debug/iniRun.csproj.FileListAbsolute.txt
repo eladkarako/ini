@@ -1,0 +1,5 @@
+C:\Users\Elad\Documents\Visual Studio 2008\Projects\iniRun\iniRun\bin\Debug\iniRun.exe
+C:\Users\Elad\Documents\Visual Studio 2008\Projects\iniRun\iniRun\bin\Debug\iniRun.pdb
+C:\Users\Elad\Documents\Visual Studio 2008\Projects\iniRun\iniRun\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Elad\Documents\Visual Studio 2008\Projects\iniRun\iniRun\obj\Debug\iniRun.exe
+C:\Users\Elad\Documents\Visual Studio 2008\Projects\iniRun\iniRun\obj\Debug\iniRun.pdb
