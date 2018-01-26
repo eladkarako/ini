@@ -47,3 +47,79 @@ handling multi-strings: <code>string1\0string2\0.....stringN\0</code><br/>
 single-string: <code>string1\0</code>.
 </li>
 </ul>
+
+<hr/>
+
+Notes about <code>GetPrivateProfileStringW</code>:
+
+When using this <code>sample.ini</code>:
+
+```ini
+[foods]
+pizza=margherita
+bread=full grain
+
+[drinks]
+cola=zero
+7up=diet
+```
+
+<ul>
+<li>Getting the "categories" by providing <code>null</code> values to all:
+
+```c#
+GetPrivateProfileStringW(null, null, null, 1024, @".\sample.ini")
+```
+
+Will return a <code>lpReturnedString</code> with <code>foods<sub>\0</sub>drinks<sub>\0</sub></code>.
+</li>
+<li>Getting all of the "keys", of a single "category" (by providing a category and <code>null</code> values to the rest):
+
+```c#
+GetPrivateProfileStringW("foods", null, null, 1024, @".\sample.ini")
+```
+
+Will return a <code>lpReturnedString</code> with <code>pizza<sub>\0</sub>bread<sub>\0</sub></code>.
+</li>
+
+<li>Getting the value of a key, by providing both category and key (you can provide default/fallback):
+
+```c#
+GetPrivateProfileStringW("foods", "pizza", "vegan", 1024, @".\sample.ini")
+```
+
+Will return a <code>lpReturnedString</code> with <code>margherita<sub>\0</sub></code>.
+</li>
+</ul>
+
+<hr/>
+
+You can try other variations, keep in mind that the return string (<code>lpReturnedString</code>) acts kind-of-funny
+on single/multiple strings. Using the function itself requires you to initialize <code>lpReturnedString</code>,
+and trim/prase it again after the call to the function, keeping just the valid textual-content.
+
+Here is how I do it, <code>\0</code>-trimming is quite-simple too.
+
+```c#
+public static string[] GetPrivateProfileStringWrapper(
+  string lpApplicationName,
+  string lpKeyName,
+  string lpDefault,
+  string lpFileName)
+{
+  int nSize = 1024;
+  string lpReturnedString = new string(' ', nSize);
+  GetPrivateProfileString(lpApplicationName, lpKeyName, lpDefault, lpReturnedString, nSize, lpFileName);
+
+
+  int limit = (lpReturnedString.IndexOf('\0') == lpReturnedString.LastIndexOf('\0')) ? lpReturnedString.LastIndexOf('\0') : lpReturnedString.LastIndexOf('\0') - 1; //single string (\0 at the end) or multi-string-separated-with-\0 (\0 is a separator and we need to remove "last empty-cell" too).
+  lpReturnedString = lpReturnedString.Substring(0, limit);
+
+  return lpReturnedString.Split('\0');
+}
+```
+
+Checking if the returned-string has a single string or multiple string is done by checking how much <code>\0</code> are there.. 
+or more simple- if there are at-least two <code>\0</code> characters in different positions.
+
+<br/>
