@@ -18,6 +18,7 @@ Some Notes:
 
 <ul>
 <li>The Windows-API currently used:
+
 ```c#
 [DllImport("kernel32.dll", EntryPoint="GetPrivateProfileStringW", CharSet=CharSet.Unicode)]
 static extern int GetPrivateProfileString ( 
@@ -35,6 +36,7 @@ static extern int WritePrivateProfileString (
 	 int lpString,
 	 string lpFileName);
 ```
+
 </li>
 <li>
 Make sure the files used (text, ini) are encoded as either ASCII or UTF-8 without BOM/signature.
