@@ -1,4 +1,4 @@
-<h1><img width="48" height="48" alt="" src="ini/icon.ico"/> INI - &nbsp; &nbsp; <a href="https://paypal.me/e1adkarak0" ok><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal Donation" ok></a></h1>
+<h1><img width="48" height="48" alt="" src="ini/icon.ico"/> INI</h1>
 <h2>[C#] INI Read/Write,<br/>With Unicode Support.</h2>
 <h3>Small, <br/>Simple, <br/>Fast.</h3>
 <h2>No Dependencies.</h2>
@@ -7,10 +7,48 @@
 
 <br/>
 <hr/>
-Note (to self?) remove <a href="https://en.wikipedia.org/wiki/Byte_order_mark">UTF-8 BOM</a> `0xEF, 0xBB, 0xBF`, UTF-16 big-endian BOM `0xFE,0xFF`, UTF-16 little-endian BOM `0xFF,0xFE`, 
-UTF-32 big-endian BOM `0x00,0x00,0xFE,0xFF`, UTF-32 little-endian `0xFF,0xFE,0x00,0x00`, UTF-7 BOM `0x2B,0x2F,0x76,0x38`, `0x2B,0x2F,0x76,0x39`, `0x2B,0x2F,0x76,0x2B`, `0x2B,0x2F,0x76,0x2F`, `0x2B,0x2F,0x76,0x38,0x2D`, 
-UTF-1 BOM `0xF7,0x64,0x4C`, UTF-EBCDIC BOM `0xDD,0x73,0x66,0x73`, SCSU BOM `0x0E,0xFE,0xFF`, BOCU-1 BOM `0xFB,0xEE,0x28`, GB-18030 BOM `0x84,0x31,0x95,0x33` 
- from the file-string start.
+
+<h3>Note <sup><em>(to self?)</em></sup></h3>
+content should be Windows-EOL (<code>\r\n</code>), <br/>
+content must be UTF-8 without BOM, so <br/>
+make sure to remove those characters (by hex.-value) from the content: <br/>
+(just after reading the raw content/ just before writing to file):
+<ol>
+<li>
+<a href="https://en.wikipedia.org/wiki/Byte_order_mark">UTF-8 BOM</a> <code>0xEF, 0xBB, 0xBF</code>
+</li>
+<li>
+UTF-16 big-endian BOM <code>0xFE,0xFF</code>
+</li>
+<li>
+UTF-16 little-endian BOM <code>0xFF,0xFE</code>
+</li>
+<li>
+UTF-32 big-endian BOM <code>0x00,0x00,0xFE,0xFF</code>
+</li>
+<li>
+UTF-32 little-endian <code>0xFF,0xFE,0x00,0x00</code>
+</li>
+<li>
+UTF-7 BOM <code>0x2B,0x2F,0x76,0x38</code>, <code>0x2B,0x2F,0x76,0x39</code>, <code>0x2B,0x2F,0x76,0x2B</code>, <code>0x2B,0x2F,0x76,0x2F</code>, <code>0x2B,0x2F,0x76,0x38,0x2D</code>
+</li>
+<li>
+UTF-1 BOM <code>0xF7,0x64,0x4C</code>
+</li>
+<li>
+UTF-EBCDIC BOM <code>0xDD,0x73,0x66,0x73</code>
+</li>
+<li>
+SCSU BOM <code>0x0E,0xFE,0xFF</code>
+</li>
+<li>
+BOCU-1 BOM <code>0xFB,0xEE,0x28</code>
+</li>
+<li>
+GB-18030 BOM <code>0x84,0x31,0x95,0x33</code> 
+</li>
+</ol>
+
 <hr/>
 
 The purpose of this project?
